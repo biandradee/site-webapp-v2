@@ -3,7 +3,7 @@ export interface TitleProps
   extends React.AllHTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
   fontWeight?: number;
-  size?: number;
+  size?: number | string;
   textAlign?: 'left' | 'center' | 'right' | 'justify' | 'initial';
   width?: number | string;
   marginTop?: number | string;

@@ -4,7 +4,8 @@ import type { TextProps } from './types';
 
 export const TextContainer = styled.p<TextProps>`
   width: ${({ width }) => (width ? pxToRem(width) : '100%')};
-  font-size: ${({ size = 20 }) => pxToRem(size)};
+  font-size: ${(props) =>
+    typeof props.size === 'number' ? `${props.size}px` : props.size};
   font-weight: ${({ weight = 400 }) => weight};
   /* font-style: regular; */
   line-height: ${({ lineHeight = 1 }) => lineHeight};

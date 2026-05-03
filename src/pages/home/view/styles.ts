@@ -206,3 +206,53 @@ export const JoinButton = styled.a`
     margin-bottom: 1rem;
   }
 `;
+
+export const SuporterContainer = styled.div`
+  padding: 60px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  margin-top: 20px;
+
+  @media (max-width: 430px) {
+    padding: 16px 24px 16px 24px;
+  }
+`;
+
+export const SuporterContent = styled.div`
+  width: 674px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
+
+export const FloatingButton = styled.a<{ stop: boolean }>`
+  position: ${({ stop }) => (stop ? 'absolute' : 'fixed')};
+  right: 74px;
+  top: auto;
+  bottom: ${({ stop }) => (stop ? '100px' : '150px')};
+  width: 245px;
+  height: 233px;
+  z-index: 999;
+  cursor: pointer;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+export const Divider = styled.hr<{ size?: 'sm' }>`
+  width: ${({ size }) => {
+    switch (size) {
+      case 'sm':
+        return 'clamp(279px, 40%, 451px)';
+      default:
+        return 'clamp(279px, 80%, 600px)';
+    }
+  }};
+
+  margin-top: 3rem;
+  margin-inline: auto;
+`;

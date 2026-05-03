@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import ImageMascote from '../../../assets/mascote.png';
 import Avatar from '../../../components/.global/avatar';
 import Title from '../../../components/.global/title';
@@ -19,6 +20,8 @@ import SkillsCarousel from '../../../components/skills.carousel';
 import type { SkillItem } from '../../../components/skills.carousel';
 import IconLabs from '@assets/icon-labs.png';
 import IconTalk from '@assets/icon-talk.png';
+import IconSuporter from '@assets/icon-suporter.svg';
+import BtnSuporter from '@assets/btn-suporter.png';
 
 import {
   AreasContainer,
@@ -41,6 +44,10 @@ import {
   SectionText,
   PapersContainer,
   ToothpickPapers,
+  SuporterContainer,
+  SuporterContent,
+  FloatingButton,
+  Divider,
 } from './styles';
 import { HOME_TESTIMONIALS } from './testimonialsData';
 
@@ -114,6 +121,27 @@ const carouselItems: SkillItem[] = [
 ];
 
 const HomeView = () => {
+  const supporterSentinelRef = useRef<HTMLDivElement>(null);
+  const [stop, setStop] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setStop(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '0px 0px -65% 0px',
+      },
+    );
+
+    if (supporterSentinelRef.current) {
+      observer.observe(supporterSentinelRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       <HomeContainer>
@@ -543,10 +571,54 @@ const HomeView = () => {
             />
           </CustomCardWrapper>
         </CardsWrapper>
-        <hr
-          style={{ width: '600px', marginTop: '3rem', marginInline: 'auto' }}
-        />
+        <Divider />
       </section>
+      <div style={{ position: 'relative' }}>
+        <SuporterContainer id="seja-um-apoiador" ref={supporterSentinelRef}>
+          <SuporterContent>
+            <Title
+              as="h2"
+              color="#001633"
+              size="clamp(28px, 4vw, 48px)"
+              fontWeight={700}
+              textAlign="center"
+              marginBottom={0}
+            >
+              Seja um Apoiador!
+            </Title>
+            <Text
+              size={16}
+              color="#323232"
+              weight={400}
+              marginBlock={0}
+              textAlign="center"
+            >
+              Com o seu apoio, ampliamos as oportunidades para quem está dando
+              os primeiros passos na área de tecnologia.
+            </Text>
+            <a
+              href="/seja-um-apoiador"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={IconSuporter}
+                alt="Seja um apoiador"
+                style={{ width: '95px', cursor: 'pointer', marginTop: '2rem' }}
+              />
+            </a>
+            <Divider size="sm" />
+          </SuporterContent>
+          <FloatingButton
+            stop={stop}
+            href="/seja-um-apoiador"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={BtnSuporter} alt="Seja um apoiador" />
+          </FloatingButton>
+        </SuporterContainer>
+      </div>
     </>
   );
 };

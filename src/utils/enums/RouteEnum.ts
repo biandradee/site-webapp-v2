@@ -3,7 +3,8 @@ export enum RouteEnum {
   INITIATIVES = '/#nossas-iniciativas',
   NEWS_AND_EVENTS = '/noticias-e-eventos',
   JOIN_US = '/faca-parte',
-  SUPPORT_US = '/seja-um-apoiador',
+  SUPPORT_US = '/#seja-um-apoiador',
+  SUPPORT_US_PAGE = '/seja-um-apoiador',
   HOME = '/',
 }
 
