@@ -5,8 +5,8 @@ import type { TitleProps } from './types';
 export const TitleContainer = styled.h1<TitleProps>`
   color: ${({ color = '#003986' }) => color};
   font-weight: ${({ fontWeight = 600 }) => fontWeight};
-  font-size: ${(props) =>
-    typeof props.size === 'number' ? `${props.size}px` : props.size};
+  font-size: ${({ size = 32 }) =>
+    typeof size === 'number' ? pxToRem(size) : size};
   text-align: ${({ textAlign = 'initial' }) => textAlign};
   width: ${({ width }) =>
     typeof width === 'string' ? width : width ? `${pxToRem(width)}` : '100%'};

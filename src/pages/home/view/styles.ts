@@ -228,11 +228,11 @@ export const SuporterContent = styled.div`
   gap: 40px;
 `;
 
-export const FloatingButton = styled.a<{ stop: boolean }>`
-  position: ${({ stop }) => (stop ? 'absolute' : 'fixed')};
+export const FloatingButton = styled.a<{ $stop: boolean }>`
+  position: ${({ $stop }) => ($stop ? 'absolute' : 'fixed')};
   right: 74px;
   top: auto;
-  bottom: ${({ stop }) => (stop ? '100px' : '150px')};
+  bottom: ${({ $stop }) => ($stop ? '100px' : '150px')};
   width: 245px;
   height: 233px;
   z-index: 999;

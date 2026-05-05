@@ -610,7 +610,7 @@ const HomeView = () => {
             <Divider size="sm" />
           </SuporterContent>
           <FloatingButton
-            stop={stop}
+            $stop={stop}
             href="/seja-um-apoiador"
             target="_blank"
             rel="noopener noreferrer"
