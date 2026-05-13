@@ -23,7 +23,10 @@ import Arrow from '../../../assets/arrow.svg';
 
 import React, { useState } from 'react';
 
-import { QUESTIONS_AND_ANSWERS } from './frequentlyAskedQuestionsData';
+import {
+  QUESTIONS_AND_ANSWERS,
+  type QuestionType,
+} from './frequentlyAskedQuestionsData';
 
 import {
   AreasContainer,
@@ -131,7 +134,8 @@ const carouselItems: SkillItem[] = [
 ];
 
 const HomeView = () => {
-  const [questionTypes, setQuestionTypes] = useState('instituicao');
+  const [questionTypes, setQuestionTypes] =
+    useState<QuestionType>('instituicao');
   const [openResponse, setOpenResponse] = useState<number[]>([]);
 
   const toggleQuestion = (id: number) => {
@@ -613,6 +617,15 @@ const HomeView = () => {
               >
                 <QuestionContainer
                   onClick={() => toggleQuestion(item.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={openResponse.includes(item.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleQuestion(item.id);
+                    }
+                  }}
                   style={{ cursor: 'pointer' }}
                 >
                   <Questions>{item.question}</Questions>

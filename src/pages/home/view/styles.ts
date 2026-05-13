@@ -301,10 +301,10 @@ export const QuestionContainer = styled.div`
   align-items: center;
   width: 884px;
   gap: 12px;
+  padding-right: 15px;
 
   @media (max-width: 430px) {
     max-width: 400px;
-    padding-right: 10px;
   }
 `;
 
@@ -313,13 +313,11 @@ export const Questions = styled.p`
   font-size: 1.25rem;
   line-height: 120%;
   font-weight: 500;
-  padding-left: 10px;
   word-break: break-word;
   overflow-wrap: break-word;
 
   @media (max-width: 430px) {
     font-size: 1rem;
-    padding-left: 0;
   }
 `;
 

@@ -1,6 +1,8 @@
+export type QuestionType = 'instituicao' | 'voluntario' | 'mentor';
+
 export interface QuestionsAndAnswersItem {
   id: number;
-  type: string;
+  type: QuestionType;
   question: string;
   answer: string;
 }
@@ -18,7 +20,7 @@ export const QUESTIONS_AND_ANSWERS: QuestionsAndAnswersItem[] = [
     type: 'instituicao',
     question: 'Como posso participar da Comunidade SouJunior?',
     answer:
-      'Você pode entrar na nossa comunidade acessando o servidor do SouJunior no Discord e no GitHub. Para se tornar membro oficialmente, é só ir no menu "Nossas Iniciativas" no site, clicar em "Conheça outras iniciativas" e preencher o formulário de candidatura. Depois disso, nosso tempo entra em contato com você!',
+      'Você pode entrar na nossa comunidade acessando o servidor do SouJunior no Discord e no GitHub. Para se tornar membro oficialmente, é só ir no menu "Nossas Iniciativas" no site, clicar em "Conheça outras iniciativas" e preencher o formulário de candidatura. Depois disso, nosso time entra em contato com você!',
   },
   {
     id: 3,
