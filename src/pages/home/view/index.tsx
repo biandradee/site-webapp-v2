@@ -22,6 +22,14 @@ import IconLabs from '@assets/icon-labs.png';
 import IconTalk from '@assets/icon-talk.png';
 import IconSuporter from '@assets/icon-suporter.svg';
 import BtnSuporter from '@assets/btn-suporter.png';
+import Arrow from '../../../assets/arrow.svg';
+
+import React, { useState } from 'react';
+
+import {
+  QUESTIONS_AND_ANSWERS,
+  type QuestionType,
+} from './frequentlyAskedQuestionsData';
 
 import {
   AreasContainer,
@@ -48,6 +56,18 @@ import {
   SuporterContent,
   FloatingButton,
   Divider,
+  SectionSubtitle,
+  Button,
+  ButtonsContainer,
+  Questions,
+  Answers,
+  QuestionContainer,
+  QuestionsAndAnswersContainer,
+  QuestionsAndAnswers,
+  DoubtButton,
+  DoubtContainer,
+  SectionQuestionsTitle,
+  ParagraphFAQSection,
 } from './styles';
 import { HOME_TESTIMONIALS } from './testimonialsData';
 
@@ -142,6 +162,16 @@ const HomeView = () => {
 
     return () => observer.disconnect();
   }, []);
+  const [questionTypes, setQuestionTypes] =
+    useState<QuestionType>('instituicao');
+  const [openResponse, setOpenResponse] = useState<number[]>([]);
+
+  const toggleQuestion = (id: number) => {
+    setOpenResponse((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
+    );
+  };
+
   return (
     <>
       <HomeContainer>
@@ -214,23 +244,33 @@ const HomeView = () => {
         </Title>
 
         <Card
-          width={879}
+          width={900}
           marginBlock="0"
           description={
             <>
-              O projeto SouJunior, criado em 1º de julho de 2022 por Wouerner
-              Brandão, surgiu da insatisfação com o mercado de tecnologia e da
-              falta de oportunidades para iniciantes.
-              <p style={{ marginBlock: '1rem' }}>
+              <p style={{ lineHeight: '140%' }}>
+                O projeto SouJunior, criado em 1º de julho de 2022 por Wouerner
+                Brandão, surgiu da insatisfação com o mercado de tecnologia e da
+                falta de oportunidades para iniciantes.
+              </p>
+              <p
+                style={{
+                  marginBlock: '1rem',
+                  lineHeight: '140%',
+                }}
+              >
                 Com mais de 120 voluntários, a iniciativa prepara profissionais
                 juniores por meio da prática real, construção de produtos e
                 vivência do dia a dia de uma empresa tech.{' '}
               </p>
-              O projeto conta com mentores experientes que lideram os times e
-              oferece um portfólio de produtos para dar visibilidade aos
-              juniores, conectando-os a recrutadores e oportunidades. Participar
-              da SouJunior proporciona experiência prática, networking, mentoria
-              e acesso à primeira oportunidade no mercado.
+              <p style={{ lineHeight: '140%' }}>
+                O projeto conta com mentores experientes que lideram os times e
+                oferece um portfólio de produtos para dar visibilidade aos
+                juniores, conectando-os a recrutadores e oportunidades.
+                Participar da SouJunior proporciona experiência prática,
+                networking, mentoria e acesso à primeira oportunidade no
+                mercado.
+              </p>
             </>
           }
           descriptionSize={16}
@@ -257,33 +297,53 @@ const HomeView = () => {
             marginBottom: '4rem',
           }}
         >
-          <p
+          <div
             style={{
-              fontSize: '1.5rem',
-              textAlign: 'center',
+              maxWidth: '309px',
             }}
           >
-            <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>10</span>
-            <br />
-            <span style={{ fontWeight: 600 }}>Participantes</span>
-          </p>{' '}
+            <p
+              style={{
+                fontSize: '1.5rem',
+                textAlign: 'center',
+              }}
+            >
+              <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>10</span>
+              <br />
+              <span style={{ fontWeight: 600 }}>Squads Atuantes</span>
+            </p>{' '}
+          </div>
           <Toothpick />
-          <p
+          <div
             style={{
-              fontSize: '1.5rem',
-              textAlign: 'center',
+              maxWidth: '309px',
             }}
           >
-            <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>+ 100</span>
-            <br />
-            <span style={{ fontWeight: 600 }}>Participantes</span>
-          </p>{' '}
+            <p
+              style={{
+                fontSize: '1.5rem',
+                textAlign: 'center',
+              }}
+            >
+              <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>
+                + 100
+              </span>
+              <br />
+              <span style={{ fontWeight: 600 }}>Voluntários Ativos</span>
+            </p>{' '}
+          </div>
           <Toothpick />
-          <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>
-            <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>+ 30</span>
-            <br />
-            <span style={{ fontWeight: 600 }}>Participantes</span>
-          </p>
+          <div
+            style={{
+              maxWidth: '309px',
+            }}
+          >
+            <p style={{ fontSize: '1.5rem', textAlign: 'center' }}>
+              <span style={{ fontSize: '2.25rem', fontWeight: 300 }}>+ 30</span>
+              <br />
+              <span style={{ fontWeight: 600 }}>Apoiadores do Projeto</span>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -619,6 +679,87 @@ const HomeView = () => {
           </FloatingButton>
         </SuporterContainer>
       </div>
+
+      <section>
+        <SectionQuestionsTitle>Perguntas Frequentes</SectionQuestionsTitle>
+
+        <SectionSubtitle>Olá! Como podemos te ajudar?</SectionSubtitle>
+
+        <DoubtContainer>
+          <ButtonsContainer>
+            <Button
+              $active={questionTypes === 'instituicao'}
+              onClick={() => setQuestionTypes('instituicao')}
+            >
+              Instituição
+            </Button>
+
+            <Button
+              $active={questionTypes === 'voluntario'}
+              onClick={() => setQuestionTypes('voluntario')}
+            >
+              Voluntário
+            </Button>
+
+            <Button
+              $active={questionTypes === 'mentor'}
+              onClick={() => setQuestionTypes('mentor')}
+            >
+              Mentor | Head | Apoiador
+            </Button>
+          </ButtonsContainer>
+
+          <QuestionsAndAnswersContainer>
+            {QUESTIONS_AND_ANSWERS.filter(
+              (item) => item.type === questionTypes,
+            ).map((item) => (
+              <QuestionsAndAnswers
+                key={item.id}
+                $active={openResponse.includes(item.id)}
+              >
+                <QuestionContainer
+                  onClick={() => toggleQuestion(item.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={openResponse.includes(item.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleQuestion(item.id);
+                    }
+                  }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <Questions>{item.question}</Questions>
+
+                  <img
+                    src={Arrow}
+                    alt=""
+                    width={24}
+                    height={24}
+                    style={{
+                      transform: openResponse.includes(item.id)
+                        ? 'rotate(180deg)'
+                        : 'rotate(0deg)',
+                      transition: '0.2s',
+                    }}
+                  />
+                </QuestionContainer>
+
+                {openResponse.includes(item.id) && (
+                  <Answers>{item.answer}</Answers>
+                )}
+              </QuestionsAndAnswers>
+            ))}
+          </QuestionsAndAnswersContainer>
+
+          <ParagraphFAQSection>Não encontrou a sua dúvida?</ParagraphFAQSection>
+
+          <DoubtButton href="/FAQ" target="_blank" rel="noopener noreferrer">
+            Pergunte aqui!
+          </DoubtButton>
+        </DoubtContainer>
+      </section>
     </>
   );
 };
