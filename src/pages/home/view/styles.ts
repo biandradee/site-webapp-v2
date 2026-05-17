@@ -235,11 +235,23 @@ export const SuporterContent = styled.div`
   gap: 40px;
 `;
 
+export const SuporterTitle = styled.h2`
+  color: #001633;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 1.87rem;
+  line-height: 150%;
+  font-weight: 700;
+
+  @media (max-width: 430px) {
+    font-size: 28px;
+  }
+`;
+
 export const FloatingButton = styled.a<{ $stop: boolean }>`
   position: ${({ $stop }) => ($stop ? 'absolute' : 'fixed')};
   right: 74px;
-  top: auto;
-  bottom: ${({ $stop }) => ($stop ? '100px' : '150px')};
+  bottom: 150px;
   width: 245px;
   height: 233px;
   z-index: 999;
@@ -259,9 +271,10 @@ export const Divider = styled.hr<{ size?: 'sm' }>`
         return 'clamp(279px, 80%, 600px)';
     }
   }};
-
   margin-top: 3rem;
   margin-inline: auto;
+`;
+
 export const SectionSubtitle = styled.h2`
   color: #001633;
   font-size: 1.5rem;

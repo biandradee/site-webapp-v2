@@ -24,8 +24,6 @@ import IconSuporter from '@assets/icon-suporter.svg';
 import BtnSuporter from '@assets/btn-suporter.png';
 import Arrow from '../../../assets/arrow.svg';
 
-import React, { useState } from 'react';
-
 import {
   QUESTIONS_AND_ANSWERS,
   type QuestionType,
@@ -68,6 +66,7 @@ import {
   DoubtContainer,
   SectionQuestionsTitle,
   ParagraphFAQSection,
+  SuporterTitle,
 } from './styles';
 import { HOME_TESTIMONIALS } from './testimonialsData';
 
@@ -142,18 +141,21 @@ const carouselItems: SkillItem[] = [
 
 const HomeView = () => {
   const supporterSentinelRef = useRef<HTMLDivElement>(null);
+  const hasPassedRef = useRef(false);
   const [stop, setStop] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setStop(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          hasPassedRef.current = true;
+          setStop(true);
+        } else if (hasPassedRef.current && entry.boundingClientRect.top > 0) {
+          hasPassedRef.current = false;
+          setStop(false);
+        }
       },
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: '0px 0px -65% 0px',
-      },
+      { root: null, threshold: 0 },
     );
 
     if (supporterSentinelRef.current) {
@@ -162,6 +164,7 @@ const HomeView = () => {
 
     return () => observer.disconnect();
   }, []);
+
   const [questionTypes, setQuestionTypes] =
     useState<QuestionType>('instituicao');
   const [openResponse, setOpenResponse] = useState<number[]>([]);
@@ -634,18 +637,9 @@ const HomeView = () => {
         <Divider />
       </section>
       <div style={{ position: 'relative' }}>
-        <SuporterContainer id="seja-um-apoiador" ref={supporterSentinelRef}>
+        <SuporterContainer id="seja-um-apoiador">
           <SuporterContent>
-            <Title
-              as="h2"
-              color="#001633"
-              size="clamp(28px, 4vw, 48px)"
-              fontWeight={700}
-              textAlign="center"
-              marginBottom={0}
-            >
-              Seja um Apoiador!
-            </Title>
+            <SuporterTitle>Seja um apoiador!</SuporterTitle>
             <Text
               size={16}
               color="#323232"
@@ -678,6 +672,7 @@ const HomeView = () => {
             <img src={BtnSuporter} alt="Seja um apoiador" />
           </FloatingButton>
         </SuporterContainer>
+        <div ref={supporterSentinelRef} style={{ height: 0 }} />
       </div>
 
       <section>
