@@ -5,7 +5,7 @@ export interface TextProps
   children: ReactNode;
   width?: number;
   color?: string;
-  size?: number;
+  size?: number | string;
   weight?: number;
   lineHeight?: number;
   margin?: number;

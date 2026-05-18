@@ -214,6 +214,67 @@ export const JoinButton = styled.a`
   }
 `;
 
+export const SuporterContainer = styled.div`
+  padding: 60px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  margin-top: 20px;
+
+  @media (max-width: 430px) {
+    padding: 16px 24px 16px 24px;
+  }
+`;
+
+export const SuporterContent = styled.div`
+  width: 674px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
+
+export const SuporterTitle = styled.h2`
+  color: #001633;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 1.87rem;
+  line-height: 150%;
+  font-weight: 700;
+
+  @media (max-width: 430px) {
+    font-size: 28px;
+  }
+`;
+
+export const FloatingButton = styled.a<{ $stop: boolean }>`
+  position: ${({ $stop }) => ($stop ? 'absolute' : 'fixed')};
+  right: 74px;
+  bottom: 150px;
+  width: 245px;
+  height: 233px;
+  z-index: 999;
+  cursor: pointer;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+export const Divider = styled.hr<{ size?: 'sm' }>`
+  width: ${({ size }) => {
+    switch (size) {
+      case 'sm':
+        return 'clamp(279px, 40%, 451px)';
+      default:
+        return 'clamp(279px, 80%, 600px)';
+    }
+  }};
+  margin-top: 3rem;
+  margin-inline: auto;
+`;
+
 export const SectionSubtitle = styled.h2`
   color: #001633;
   font-size: 1.5rem;
