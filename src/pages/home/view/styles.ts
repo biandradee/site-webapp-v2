@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+interface ButtonProps {
+  $active?: boolean;
+}
+
+interface QuestionsAndAnswersProps {
+  $active?: boolean;
+}
 
 export const HomeContainer = styled.div`
   height: 583px;
@@ -45,7 +52,7 @@ export const HomeButton = styled.a`
 export const Toothpick = styled.div`
   position: relative;
   width: 1px;
-  height: 2.6rem;
+  height: 3.125rem;
   background-color: #666666;
   margin: 1rem 10rem;
 `;
@@ -204,5 +211,228 @@ export const JoinButton = styled.a`
 
   @media (max-width: 606px) {
     margin-bottom: 1rem;
+  }
+`;
+
+export const SuporterContainer = styled.div`
+  padding: 60px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  margin-top: 20px;
+
+  @media (max-width: 430px) {
+    padding: 16px 24px 16px 24px;
+  }
+`;
+
+export const SuporterContent = styled.div`
+  width: 674px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
+
+export const SuporterTitle = styled.h2`
+  color: #001633;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 1.87rem;
+  line-height: 150%;
+  font-weight: 700;
+
+  @media (max-width: 430px) {
+    font-size: 28px;
+  }
+`;
+
+export const FloatingButton = styled.a<{ $stop: boolean }>`
+  position: ${({ $stop }) => ($stop ? 'absolute' : 'fixed')};
+  right: 74px;
+  bottom: 150px;
+  width: 245px;
+  height: 233px;
+  z-index: 999;
+  cursor: pointer;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+export const Divider = styled.hr<{ size?: 'sm' }>`
+  width: ${({ size }) => {
+    switch (size) {
+      case 'sm':
+        return 'clamp(279px, 40%, 451px)';
+      default:
+        return 'clamp(279px, 80%, 600px)';
+    }
+  }};
+  margin-top: 3rem;
+  margin-inline: auto;
+`;
+
+export const SectionSubtitle = styled.h2`
+  color: #001633;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.625rem;
+  line-height: 120%;
+  font-weight: 500;
+
+  @media (max-width: 430px) {
+    font-size: 1rem;
+  }
+`;
+
+export const SectionQuestionsTitle = styled.h2`
+  color: #001633;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1.87rem;
+  line-height: 150%;
+  font-weight: 700;
+
+  @media (max-width: 430px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const Button = styled.button<ButtonProps>`
+  background: transparent;
+  border: none;
+  color: #002c66;
+  max-width: 14.68rem;
+  min-height: 2.75rem;
+  margin: 0 0.25rem;
+  padding: 0.25em 1em;
+
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 120%;
+  font-family: 'Radio Canada', sans-serif;
+
+  border-bottom: 2px solid
+    ${({ $active }) => ($active ? '#338aff' : 'transparent')};
+
+  @media (max-width: 430px) {
+    max-width: 110px;
+    min-height: 73px;
+    padding: 0.5rem;
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+  @media (max-width: 430px) {
+    max-width: 382px;
+  }
+`;
+
+export const QuestionsAndAnswersContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+`;
+
+export const QuestionsAndAnswers = styled.div<QuestionsAndAnswersProps>`
+  display: flex;
+  flex-direction: column;
+  max-width: 884px;
+  padding: 20px 0 10px 10px;
+  border-bottom: 1px solid #dedede;
+  border-radius: ${({ $active }) => ($active ? '0 0 4px 4px' : '0')};
+
+  @media (max-width: 430px) {
+    width: 400px;
+  }
+`;
+
+export const QuestionContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 884px;
+  gap: 12px;
+  padding-right: 15px;
+
+  @media (max-width: 430px) {
+    max-width: 400px;
+  }
+`;
+
+export const Questions = styled.p`
+  color: #003986;
+  font-size: 1.25rem;
+  line-height: 120%;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  @media (max-width: 430px) {
+    font-size: 1rem;
+  }
+`;
+
+export const Answers = styled.p`
+  color: #323232;
+  font-size: 1rem;
+  text-align: start;
+  line-height: 140%;
+  font-weight: 400;
+  margin-top: 0.6rem;
+  padding: 0 20px 10px 10px;
+
+  @media (max-width: 430px) {
+    padding-left: 0;
+  }
+`;
+
+export const DoubtButton = styled.a`
+  font-size: 1.5rem;
+  color: #001633;
+  font-family: 'Radio Canada', sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
+  font-weight: 500;
+  line-height: 120%;
+
+  @media (max-width: 430px) {
+    font-size: 1.25rem;
+  }
+`;
+
+export const ParagraphFAQSection = styled.p`
+  color: #001633;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.625rem;
+  line-height: 120%;
+  font-weight: 500;
+
+  @media (max-width: 430px) {
+    font-size: 1.25rem;
+  }
+`;
+
+export const DoubtContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+
+  @media (max-width: 430px) {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
