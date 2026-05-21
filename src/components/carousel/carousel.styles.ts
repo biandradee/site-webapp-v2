@@ -40,7 +40,6 @@ export const ArrowButton = styled.button<{ disabled?: boolean }>`
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px;
   padding: 8px;
   width: auto;
   height: auto;

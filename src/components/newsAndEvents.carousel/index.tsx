@@ -85,7 +85,9 @@ function NewsAndEventsCarousel({ items }: carouselProps) {
 
                 <Button
                   variant="outline"
-                  onClick={() => window.open(item.link, '_blank')}
+                  onClick={() =>
+                    window.open(item.link, '_blank', 'noopener noreferrer')
+                  }
                 >
                   Confira
                 </Button>

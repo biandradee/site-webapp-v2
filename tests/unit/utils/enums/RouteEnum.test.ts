@@ -5,7 +5,7 @@ describe('RouteEnum', () => {
     expect(RouteEnum).toEqual({
       ABOUT_US: '/sobre-nos',
       INITIATIVES: '/nossas-iniciativas',
-      newsAndEvents: '/noticias-e-eventos',
+      newsAndEvents: '/#noticias-eventos',
       JOIN_US: '/faca-parte',
       SUPPORT_US: '/seja-um-apoiador',
       DESIGN: '/design',
