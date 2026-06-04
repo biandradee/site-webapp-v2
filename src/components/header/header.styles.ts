@@ -42,6 +42,13 @@ export const NavLinks = styled.nav`
   gap: 0.5rem;
   align-items: center;
 
+  a:last-child {
+    border: 2px solid #3c7ef9;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+
   /* Responsive navigation */
   @media (max-width: 768px) {
     flex-wrap: wrap;

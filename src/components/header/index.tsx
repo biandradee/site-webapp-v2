@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { HeaderContainer, NavLinks } from './header.styles';
 import Link from '../.global/link';
 import type { HeaderProps } from './types';
-import logoImage from '../../assets/sj-logo-header.png';
+import logoImage from '../../assets/sj-logo-header.svg';
 import Logo from '../.global/logo';
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
