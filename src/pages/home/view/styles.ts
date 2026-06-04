@@ -10,7 +10,7 @@ interface QuestionsAndAnswersProps {
 export const HomeContainer = styled.div`
   height: 583px;
   padding: 94px 70px;
-  background-color: #001633;
+  background-color: #274add;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +38,8 @@ export const HomeButton = styled.a`
   width: 127px;
   height: 40px;
   border-radius: 10px;
-  color: white;
-  background-color: #003986;
+  color: #003986;
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
   display: inline-flex;

@@ -17,4 +17,5 @@ export const TitleContainer = styled.h1<TitleProps>`
     typeof marginBottom === 'number'
       ? `${pxToRem(marginBottom)}`
       : marginBottom};
+  font-family: ${({ fontFamily }) => fontFamily || 'Arial, sans-serif'};
 `;

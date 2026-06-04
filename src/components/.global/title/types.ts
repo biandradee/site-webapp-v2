@@ -11,4 +11,5 @@ export interface TitleProps
   color?: string;
   backgroundColor?: string;
   as?: keyof React.JSX.IntrinsicElements; //"h1" | "h2" | "h3";
+  fontFamily?: string;
 }
