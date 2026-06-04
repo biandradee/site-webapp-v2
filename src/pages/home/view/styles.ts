@@ -63,7 +63,7 @@ export const TestimonialColumn = styled.div`
 `;
 
 export const TestimonialCard = styled.article`
-  background-color: #001633;
+  background-color: #407bff;
   border-radius: 16px;
   height: 270px;
   width: 354px;
@@ -71,7 +71,7 @@ export const TestimonialCard = styled.article`
 `;
 
 export const TestimonialAuthor = styled.div`
-  margin-top: -1.15rem;
+  margin-top: -2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +199,7 @@ export const JoinButton = styled.a`
   height: 44px;
   border-radius: 10px;
   color: white;
-  background-color: #003986;
+  background-color: #338aff;
   border: none;
   cursor: pointer;
   display: inline-flex;

@@ -392,6 +392,7 @@ const HomeView = () => {
               size={40}
               textAlign="center"
               marginBottom={20}
+              fontFamily="'Funnel Display', sans-serif"
             >
               Áreas de atuação
             </Title>
