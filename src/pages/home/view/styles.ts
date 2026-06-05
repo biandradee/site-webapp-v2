@@ -49,7 +49,8 @@ export const HomeTextContent = styled.div`
   flex-direction: column;
 
   @media (max-width: 480px) {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     align-items: center;
   }
 `;
