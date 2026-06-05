@@ -39,6 +39,7 @@ import {
   HomeButton,
   HomeContainer,
   HomeContent,
+  HomeTitle,
   HomeTextContent,
   JoinButton,
   TestimonialAuthor,
@@ -67,6 +68,8 @@ import {
   SectionQuestionsTitle,
   ParagraphFAQSection,
   SuporterTitle,
+  HomeMascote,
+  HomeText,
 } from './styles';
 import { HOME_TESTIMONIALS } from './testimonialsData';
 
@@ -180,37 +183,19 @@ const HomeView = () => {
       <HomeContainer>
         <HomeContent>
           <HomeTextContent>
-            <Title
-              id="home-heading"
-              color="white"
-              size={40}
-              marginBottom="3rem"
-            >
-              Desenvolva habilidades no mercado Tech
-            </Title>
+            <HomeTitle>Transformando potencial em experiência real.</HomeTitle>
 
-            <Text
-              size={18}
-              color="white"
-              weight={300}
-              marginBlock={0}
-              lineHeight={1.4}
-            >
-              Na SouJunior, você trabalha com produtos digitais e adquire
-              habilidades valiosas para a sua carreira.
-            </Text>
+            <HomeText>
+              Da tecnologia ao recrutamento, do design à agilidade, do social
+              media ao produto:
+            </HomeText>
 
-            <Text
-              size={18}
-              color="white"
-              weight={300}
-              marginBlock={0}
-              lineHeight={1.4}
-            >
-              Você terá chance de desenvolver suas competências e aprofundar o
-              seu conhecimento em áreas de seu interesse, aumentando assim suas
-              chances de sucesso na sua trajetória profissional.
-            </Text>
+            <HomeText>
+              Na SouJunior, você vivencia experiências reais em squads
+              multidisciplinares, aprende com mentores experientes e desenvolve
+              habilidades em um ambiente voluntário criado para transformar
+              juniores em desbravadores do primeiro SIM.
+            </HomeText>
 
             <HomeButton
               href="https://stars.soujunior.tech/"
@@ -221,7 +206,7 @@ const HomeView = () => {
             </HomeButton>
           </HomeTextContent>
 
-          <img src={ImageMascote} alt="" width={443} height={443} />
+          <HomeMascote src={ImageMascote} alt="" />
         </HomeContent>
       </HomeContainer>
 

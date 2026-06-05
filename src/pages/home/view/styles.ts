@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import BackgroundHero from '@assets/background-hero.png';
+
 interface ButtonProps {
   $active?: boolean;
 }
@@ -8,14 +10,22 @@ interface QuestionsAndAnswersProps {
 }
 
 export const HomeContainer = styled.div`
+  width: 100%;
   height: 583px;
   padding: 94px 70px;
-  background-color: #001633;
+  background-image: url(${BackgroundHero});
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
   margin-top: 1rem;
+
+  @media (max-width: 480px) {
+    height: auto;
+    padding: 40px 16px;
+  }
 `;
 
 export const HomeContent = styled.main`
@@ -24,29 +34,82 @@ export const HomeContent = styled.main`
   gap: 150px;
   width: 1144px;
   max-width: 100%;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
 `;
 
 export const HomeTextContent = styled.div`
+  width: 551px;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  width: 551px;
+
+  @media (max-width: 480px) {
+    width: 430px;
+    align-items: center;
+  }
+`;
+
+export const HomeTitle = styled.h1`
+  color: white;
+  font-size: 40px;
+  line-height: 120%;
+  font-weight: 600;
+  margin-bottom: 50px;
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+`;
+export const HomeText = styled.p`
+  color: white;
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 400;
+  margin-bottom: 8px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+`;
+
+export const HomeMascote = styled.img`
+  width: 443px;
+  height: 443px;
   flex-shrink: 0;
+  object-fit: contain;
+
+  @media (max-width: 480px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 export const HomeButton = styled.a`
   width: 127px;
   height: 40px;
-  border-radius: 10px;
-  color: white;
-  background-color: #003986;
+  border-radius: 8px;
+  color: #003986;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
   border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  margin-top: 3rem;
+  margin-top: 40px;
+
+  @media (max-width: 480px) {
+    margin-top: 8px;
+  }
 `;
 
 export const Toothpick = styled.div`
