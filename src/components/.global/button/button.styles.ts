@@ -11,7 +11,7 @@ export const StyledButton = styled.button<ButtonProps>`
       ? '#fff'
       : variant === 'tertiary'
         ? 'transparent'
-        : 'rgba(0, 57, 134, 1)'};
+        : '#3C7EF9'};
   color: ${({ variant }) => (variant === 'primary' ? '#fff' : '#0056b3')};
   padding: 1rem 2rem;
   border-radius: 10px;

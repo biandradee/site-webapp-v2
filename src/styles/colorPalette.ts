@@ -1,5 +1,5 @@
 export const colorPalette = {
-  primaryColor: '#0056b3',
+  primaryColor: '#3C7EF9',
   primaryHover: '#003d82',
   secondaryColor: '#323232',
   successColor: '#155724',
