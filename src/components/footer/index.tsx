@@ -23,7 +23,7 @@ function Footer() {
   return (
     <div
       style={{
-        backgroundColor: '#001633',
+        backgroundColor: '#3C7EF9',
         display: 'flex',
         justifyContent: 'center',
         marginTop: '2.5rem',
