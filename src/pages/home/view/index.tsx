@@ -691,7 +691,7 @@ const HomeView = () => {
       <div style={{ position: 'relative' }}>
         <SuporterContainer id="seja-um-apoiador">
           <SuporterContent>
-            <SuporterTitle>Seja um apoiador!</SuporterTitle>
+            <SuporterTitle>Seja Um Apoiador!</SuporterTitle>
             <Text
               size={16}
               color="#323232"
