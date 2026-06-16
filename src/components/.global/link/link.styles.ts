@@ -14,40 +14,54 @@ export const StyledLink = styled.a<
     | 'isFirstLink'
     | 'isLastLink'
     | 'isActive'
+    | 'isFooterLink'
   >
 >`
   color: ${({ color, isActive }) =>
-    color
-      ? color
-      : isActive
-        ? '#0056b3'
-        : '#3C7EF9'}; /* Darker blue for better contrast */
+    color ? color : isActive ? '#0056b3' : '#3C7EF9'};
+
   text-decoration: none;
   cursor: ${({ isFirstLink }) => (isFirstLink ? 'auto' : 'pointer')};
+
   background-color: ${({ isActive }) =>
     isActive ? 'rgba(0,86,179,0.1)' : 'transparent'};
+
   font-size: ${({ size = 16 }) => pxToRem(size)};
-  font-weight: 400;
+  font-weight: ${({ isFirstLink }) => (isFirstLink ? 600 : 400)};
+
   border: ${({ isLastLink }) => (isLastLink ? '2px solid #3C7EF9' : 'none')};
+
   border-radius: 4px;
+
   padding-block: ${({ paddingY }) => (paddingY ? pxToRem(paddingY) : 'auto')};
+
   padding-inline: ${({ paddingX }) => (paddingX ? pxToRem(paddingX) : 'auto')};
+
   transition: all 0.2s ease-in-out;
   position: relative;
 
   min-height: 16px;
   min-width: 16px;
+
   width: ${({ width }) => width ?? 'auto'};
   height: ${({ height }) => height ?? 'auto'};
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 430px) {
+    font-size: ${({ isFooterLink, isFirstLink, size = 16 }) =>
+      isFooterLink ? (isFirstLink ? pxToRem(16) : pxToRem(14)) : pxToRem(size)};
+  }
+
   &:hover {
     text-decoration: ${({ isFirstLink }) =>
       isFirstLink ? 'none' : 'underline'};
+
     background-color: ${({ isFirstLink }) =>
       isFirstLink ? 'transparent' : 'rgba(0, 86, 179, 0.1)'};
+
     color: ${({ isFirstLink }) => (isFirstLink ? '#fff' : '#0056b3')};
   }
 

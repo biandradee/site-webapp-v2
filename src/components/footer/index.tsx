@@ -7,6 +7,7 @@ import {
   Logo,
   Hr,
   NavContainer,
+  ContentWrapper,
 } from './footer.styles';
 import Link from '../.global/link';
 import Image from '../.global/image';
@@ -38,7 +39,7 @@ function Footer() {
           />
         </Logo>
         <NavContainer>
-          <div style={{ display: 'flex', gap: '3rem', marginBottom: '2.5rem' }}>
+          <ContentWrapper>
             <Nav>
               {footerLinks.map((link, index) => {
                 const isFirst = index === 0;
@@ -47,7 +48,7 @@ function Footer() {
                     key={link.label}
                     to={link.to}
                     color="#fff"
-                    size={index === 0 ? 20 : 16}
+                    size={index === 0 ? 24 : 16}
                     isFirstLink={isFirst}
                   >
                     {link.label}
@@ -64,7 +65,7 @@ function Footer() {
                       key={link.label}
                       to={link.to}
                       color="#fff"
-                      size={index === 0 ? 20 : 16}
+                      size={index === 0 ? 24 : 16}
                       isFirstLink={isFirst}
                     >
                       {link.label}
@@ -81,7 +82,7 @@ function Footer() {
                       key={link.label}
                       to={link.to}
                       color="#fff"
-                      size={index === 0 ? 20 : 16}
+                      size={index === 0 ? 24 : 16}
                       isFirstLink={isFirst}
                     >
                       {link.label}
@@ -89,7 +90,7 @@ function Footer() {
                   );
                 })}
             </Nav>
-          </div>
+          </ContentWrapper>
         </NavContainer>
         {socialLinks && (
           <SocialList>
