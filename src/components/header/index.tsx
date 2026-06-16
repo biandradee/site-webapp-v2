@@ -32,7 +32,11 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
               role="img"
             />
           </a>
-          <NavLinks role="navigation" aria-label="Navegação principal">
+          <NavLinks
+            role="navigation"
+            aria-label="Navegação principal"
+            highlightLastLink
+          >
             {links[0]?.map((link) => (
               <Link
                 key={link.label}

@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+interface NavLinksProps {
+  highlightLastLink?: boolean;
+}
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -37,17 +40,21 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const NavLinks = styled.nav`
+export const NavLinks = styled.nav<NavLinksProps>`
   display: flex;
   gap: 0.5rem;
   align-items: center;
 
-  a:last-child {
-    border: 2px solid #3c7ef9;
-    padding: 0.7rem 1rem;
-    font-weight: 500;
-    border-radius: 8px;
-  }
+  ${({ highlightLastLink }) =>
+    highlightLastLink &&
+    `
+      a:last-child {
+        border: 2px solid #3c7ef9;
+        padding: 0.7rem 1rem;
+        font-weight: 500;
+        border-radius: 8px;
+      }
+    `}
 
   /* Responsive navigation */
   @media (max-width: 768px) {
