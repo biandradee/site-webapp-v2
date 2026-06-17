@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             <NavLinks
               role="navigation"
               aria-label="Navegação principal"
-              highlightLastLink
+              $highlightLastLink
             >
               {links[0]?.map((link) => (
                 <Link
@@ -87,16 +87,27 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                 left: 340,
               }}
             >
-              <img
-                src={menuIcon}
-                alt="Abrir menu"
+              <button
+                type="button"
+                aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((prev) => !prev)}
                 style={{
                   cursor: 'pointer',
                   width: '24px',
                   height: '24px',
+                  padding: 0,
+                  border: 0,
+                  background: 'transparent',
                 }}
-                onClick={() => setMenuOpen(!menuOpen)}
-              />
+              >
+                <img
+                  src={menuIcon}
+                  alt=""
+                  aria-hidden="true"
+                  style={{ width: '24px', height: '24px' }}
+                />
+              </button>
 
               {menuOpen && (
                 <NavLinks

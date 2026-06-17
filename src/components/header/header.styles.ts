@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 interface NavLinksProps {
-  highlightLastLink?: boolean;
+  $highlightLastLink?: boolean;
 }
 
 export const HeaderContainer = styled.header`
@@ -61,8 +61,8 @@ export const NavLinks = styled.nav<NavLinksProps>`
   gap: 0.5rem;
   align-items: center;
 
-  ${({ highlightLastLink }) =>
-    highlightLastLink &&
+  ${({ $highlightLastLink }) =>
+    $highlightLastLink &&
     `
       a:last-child {
         border: 2px solid #3c7ef9;
