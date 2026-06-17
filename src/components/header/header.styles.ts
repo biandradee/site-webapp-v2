@@ -38,6 +38,22 @@ export const HeaderContainer = styled.header`
     border-bottom: 2px solid #000;
     background-color: #fff;
   }
+
+  @media (max-width: 431px) {
+    height: 95px;
+
+    & > div {
+      width: 100vw;
+    }
+
+    & > div > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 2rem);
+      margin: 1rem;
+    }
+  }
 `;
 
 export const NavLinks = styled.nav<NavLinksProps>`
@@ -67,5 +83,11 @@ export const NavLinks = styled.nav<NavLinksProps>`
     flex-direction: column;
     width: 100%;
     gap: 0.5rem;
+  }
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
   }
 `;

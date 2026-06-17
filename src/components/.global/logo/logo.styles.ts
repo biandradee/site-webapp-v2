@@ -9,4 +9,9 @@ export const LogoContainer = styled.img`
   @media (max-width: 480px) {
     height: 32px;
   }
+
+  @media (max-width: 480px) {
+    width: 43px;
+    height: 44px;
+  }
 `;
