@@ -1,3 +1,5 @@
+import { colorPalette } from '../../../../src/styles/colorPalette';
+
 import styled from 'styled-components';
 interface ButtonProps {
   $active?: boolean;
@@ -10,7 +12,7 @@ interface QuestionsAndAnswersProps {
 export const HomeContainer = styled.div`
   height: 583px;
   padding: 94px 70px;
-  background-color: #274add;
+  background-color: ${colorPalette.primaryColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +65,7 @@ export const TestimonialColumn = styled.div`
 `;
 
 export const TestimonialCard = styled.article`
-  background-color: #407bff;
+  background-color: ${colorPalette.primaryColor};
   border-radius: 16px;
   height: 270px;
   width: 354px;

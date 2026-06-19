@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 
 export interface LinkProps {
   children?: ReactNode;
+  tabIndex?: number;
+  ariaDescribedBy?: string;
 
   color?: string;
   size?: number;

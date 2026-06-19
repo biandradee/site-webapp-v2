@@ -2,6 +2,7 @@ import styled from 'styled-components';
 interface NavLinksProps {
   $highlightLastLink?: boolean;
 }
+import { colorPalette } from '../../../src/styles/colorPalette';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -60,7 +61,7 @@ export const NavLinks = styled.nav<NavLinksProps>`
     $highlightLastLink &&
     `
       a:last-child {
-        border: 2px solid #3c7ef9;
+        border: 2px solid ${colorPalette.primaryColor};
         padding: 0.7rem 1rem;
         font-weight: 500;
         border-radius: 8px;
