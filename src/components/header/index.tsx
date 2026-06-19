@@ -46,7 +46,16 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
     <HeaderContainer role="banner">
       <div>
-        <div style={{ position: 'relative' }}>
+        <div
+          style={{
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            margin: 0,
+          }}
+        >
           <a href="/">
             <Logo
               src={isMobile ? logoMobile : logoDesktop}
@@ -80,13 +89,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
           )}
 
           {isMobile && (
-            <div
-              style={{
-                position: 'absolute',
-                top: -10,
-                left: 340,
-              }}
-            >
+            <div style={{ position: 'relative' }}>
               <button
                 type="button"
                 aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -116,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
                   style={{
                     position: 'absolute',
                     top: '40px',
-                    right: 375,
+                    right: 0,
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     background: '#fff',

@@ -12,25 +12,20 @@ export const HeaderContainer = styled.header`
   font-weight: 500;
   position: relative;
 
-  & div {
-    width: stretch;
+  & > div:first-child {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    & div {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin: 1rem 2rem;
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-    }
+    margin: 0;
+    padding: 1rem 2rem;
   }
 
   /* Responsive design */
   @media (max-width: 768px) {
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   /* High contrast mode support */
