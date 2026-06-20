@@ -216,7 +216,9 @@ const HomeView = () => {
       <HomeContainer>
         <HomeContent>
           <HomeTextContent>
-            <HomeTitle>Transformando potencial em experiência real.</HomeTitle>
+            <HomeTitle id="home-heading">
+              Transformando potencial em experiência real.
+            </HomeTitle>
 
             <HomeText>
               Da tecnologia ao recrutamento, do design à agilidade, do social
@@ -239,7 +241,7 @@ const HomeView = () => {
             </HomeButton>
           </HomeTextContent>
 
-          <HomeMascote src={ImageMascote} alt="" />
+          <HomeMascote src={ImageMascote} alt="Mascote do Soujunior" />
         </HomeContent>
       </HomeContainer>
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BackgroundHero from '@assets/background-hero.png';
+import BackgroundHero from '@assets/background-hero.webp';
 
 interface ButtonProps {
   $active?: boolean;
@@ -21,6 +21,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
   user-select: none;
   margin-top: 1rem;
+  background-repeat: no-repeat;
 
   @media (max-width: 480px) {
     height: auto;
