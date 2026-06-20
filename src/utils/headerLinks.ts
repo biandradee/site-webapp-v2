@@ -2,6 +2,13 @@ import { RouteEnum, RouteEnum2 } from './enums/RouteEnum';
 
 export const createHeaderLinks = (navigate: (route: RouteEnum) => void) => {
   const handleAnchorClick = (route: string) => {
+    const isExternal =
+      route.startsWith('http://') || route.startsWith('https://');
+
+    if (isExternal) {
+      window.open(route, '_blank', 'noopener,noreferrer');
+      return;
+    }
     const hash = route.includes('#') ? route.split('#')[1] : null;
     const basePath = route.includes('#') ? route.split('#')[0] || '/' : route;
 

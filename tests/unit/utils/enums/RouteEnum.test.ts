@@ -6,7 +6,7 @@ describe('RouteEnum', () => {
       ABOUT_US: '/sobre-nos',
       INITIATIVES: '/nossas-iniciativas',
       newsAndEvents: '/#noticias-eventos',
-      JOIN_US: '/faca-parte',
+      JOIN_US: 'https://stars.soujunior.tech/',
       SUPPORT_US: '/seja-um-apoiador',
       DESIGN: '/design',
     });
