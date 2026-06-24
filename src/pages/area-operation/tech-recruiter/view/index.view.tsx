@@ -150,7 +150,7 @@ const TechRecruiterView: React.FC = () => {
               padding="20px"
               width={191}
               height={218}
-              backgroundColor="#002C66"
+              backgroundColor="#3C7EF9"
               imageSrc={image}
               imageWidth={80}
               imageHeight={80}

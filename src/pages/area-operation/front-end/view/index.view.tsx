@@ -172,7 +172,7 @@ const FrontEndView: React.FC = () => {
               padding="20px"
               width={191}
               height={218}
-              backgroundColor="#002C66"
+              backgroundColor="#3C7EF9"
               //------------
               imageSrc={img}
               imageWidth={80}
@@ -180,7 +180,7 @@ const FrontEndView: React.FC = () => {
               //------------
               title={skill}
               titleSize={16}
-              titleColor="#8BB8FF"
+              titleColor="#fff"
               titleTextAlign="center"
               //------------
               description={desc}
