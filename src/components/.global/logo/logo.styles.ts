@@ -7,6 +7,7 @@ export const LogoContainer = styled.img`
 
   /* Ensure logo is accessible */
   @media (max-width: 480px) {
-    height: 32px;
+    width: 43px;
+    height: 44px;
   }
 `;

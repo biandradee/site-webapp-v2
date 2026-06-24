@@ -65,16 +65,18 @@ export default function SkillsCarousel({ items }: SkillsCarouselProps) {
                 padding="24px"
                 height={147}
                 width={191}
-                backgroundColor="#001633"
+                backgroundColor="#3C7EF9"
                 imageSrc={item.img}
                 imageWidth={61}
                 imageHeight={61}
                 title={item.title}
                 titleSize={16}
-                titleColor="#FFF"
+                titleColor="#ffffff"
                 titleTextAlign="center"
                 titleMarginTop="0.5rem"
                 titleMarginBottom="0rem"
+                titleFontWeight={400}
+                titleFontFamily="'Radio Canada', sans-serif"
               />
             </Link>
           </ItemWrapper>
