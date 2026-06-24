@@ -35,6 +35,8 @@ const Card: React.FC<CardProps> = ({
   titleMarginTop,
   titleMarginBottom,
   titleColor,
+  titleFontWeight,
+  titleFontFamily,
 
   subtitle,
 
@@ -103,6 +105,8 @@ const Card: React.FC<CardProps> = ({
           marginBottom={titleMarginBottom}
           color={titleColor}
           textAlign={titleTextAlign}
+          fontWeight={titleFontWeight}
+          fontFamily={titleFontFamily}
         >
           {title}
         </Title>

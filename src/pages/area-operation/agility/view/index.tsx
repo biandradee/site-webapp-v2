@@ -115,7 +115,7 @@ const AgilityView = () => {
               padding="20px"
               width={191}
               height={218}
-              backgroundColor="#002C66"
+              backgroundColor="#3C7EF9"
               //------------
               imageSrc={img}
               imageWidth={80}
@@ -123,7 +123,7 @@ const AgilityView = () => {
               //------------
               title={skill}
               titleSize={16}
-              titleColor="#8BB8FF"
+              titleColor="#fff"
               titleTextAlign="center"
             />
           ))}

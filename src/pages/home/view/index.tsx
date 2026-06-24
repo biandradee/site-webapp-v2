@@ -257,11 +257,12 @@ const HomeView = () => {
         <Title
           as="h2"
           textAlign="center"
-          color="#001633"
+          color="#003986"
           size={48}
           width={510}
           fontWeight={700}
           marginBottom={12}
+          fontFamily="'Funnel Display', sans-serif"
         >
           Sobre a SouJunior
         </Title>
@@ -378,6 +379,7 @@ const HomeView = () => {
               size={40}
               textAlign="center"
               marginBottom={20}
+              fontFamily="'Funnel Display', sans-serif"
             >
               Áreas de atuação
             </Title>

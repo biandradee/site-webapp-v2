@@ -1,3 +1,5 @@
+import { colorPalette } from '../../../../src/styles/colorPalette';
+
 import styled from 'styled-components';
 import BackgroundHero from '@assets/background-hero.webp';
 
@@ -13,6 +15,7 @@ export const HomeContainer = styled.div`
   width: 100%;
   height: 583px;
   padding: 94px 70px;
+  background-color: ${colorPalette.primaryColor};
   background-image: url(${BackgroundHero});
   background-size: cover;
   background-position: center;
@@ -96,6 +99,9 @@ export const HomeMascote = styled.img`
 export const HomeButton = styled.a`
   width: 127px;
   height: 40px;
+  border-radius: 10px;
+  color: #003986;
+  background-color: #ffffff;
   border-radius: 8px;
   color: #003986;
   font-size: 16px;
@@ -128,7 +134,7 @@ export const TestimonialColumn = styled.div`
 `;
 
 export const TestimonialCard = styled.article`
-  background-color: #001633;
+  background-color: ${colorPalette.primaryColor};
   border-radius: 16px;
   height: 270px;
   width: 354px;
@@ -136,7 +142,7 @@ export const TestimonialCard = styled.article`
 `;
 
 export const TestimonialAuthor = styled.div`
-  margin-top: -1.15rem;
+  margin-top: -2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,7 +270,7 @@ export const JoinButton = styled.a`
   height: 44px;
   border-radius: 10px;
   color: white;
-  background-color: #003986;
+  background-color: #338aff;
   border: none;
   cursor: pointer;
   display: inline-flex;
