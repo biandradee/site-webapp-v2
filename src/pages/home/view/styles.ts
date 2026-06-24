@@ -135,7 +135,6 @@ export const TestimonialCard = styled.article`
   width: 354px;
   padding: 1.5rem;
   transition: transform 250ms ease;
-  z-index: 2;
 
   &:hover {
     transform: scale(1.04);
