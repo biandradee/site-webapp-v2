@@ -1,19 +1,28 @@
+import type { ReactNode } from 'react';
+
 export interface LinkProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  to?: string;
-  ariaLabel?: string;
-  ariaDescribedBy?: string;
-  role?: string;
+  children?: ReactNode;
   tabIndex?: number;
-  img?: boolean;
+  ariaDescribedBy?: string;
+
   color?: string;
   size?: number;
   paddingY?: number;
   paddingX?: number;
-  width?: number | string;
-  height?: number | string;
+
+  width?: number;
+  height?: number;
+
   isFirstLink?: boolean;
   isLastLink?: boolean;
   isActive?: boolean;
+  isFooterLink?: boolean;
+
+  to?: string;
+  img?: boolean;
+
+  role?: string;
+  ariaLabel?: string;
+
+  onClick?: () => void;
 }

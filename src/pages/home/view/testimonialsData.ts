@@ -35,7 +35,7 @@ export const HOME_TESTIMONIALS: TestimonialItem[] = [
     quote:
       'Ambientes controlados, como salas de aula de cursos, são distantes da realidade de trabalho, repletos de variáveis desconhecidas. Isso gera um vácuo para os aprendizes, dificultando o progresso, sem que os estágios possam preenchê-lo. A SouJunior resolve esse problema, sendo aberta para todos. ',
     name: 'Caique Fonseca',
-    role: 'UI & UX Designer',
+    role: 'Agile',
     avatarSrc: '/testimonials/img3.png',
     avatarAlt: 'Caique Fonseca',
   },

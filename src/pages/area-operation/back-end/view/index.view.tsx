@@ -189,7 +189,7 @@ const BackEndView: React.FC = () => {
               padding="20px"
               width={191}
               height={218}
-              backgroundColor="#002C66"
+              backgroundColor="#3C7EF9"
               //------------
               imageSrc={image}
               imageWidth={80}
@@ -197,7 +197,7 @@ const BackEndView: React.FC = () => {
               //------------
               title={skill}
               titleSize={16}
-              titleColor="#8BB8FF"
+              titleColor="#fff"
               titleTextAlign="center"
               //------------
               description={desc}
