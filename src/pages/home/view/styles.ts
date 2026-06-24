@@ -131,14 +131,20 @@ export const Toothpick = styled.div`
 export const TestimonialColumn = styled.div`
   margin-inline: auto;
   min-width: 354px;
+  padding: 10px;
 `;
 
 export const TestimonialCard = styled.article`
   background-color: ${colorPalette.primaryColor};
-  border-radius: 16px;
+  border-radius: 24px;
   height: 270px;
   width: 354px;
   padding: 1.5rem;
+  transition: transform 250ms ease;
+
+  &:hover {
+    transform: scale(1.04);
+  }
 `;
 
 export const TestimonialAuthor = styled.div`
@@ -146,6 +152,8 @@ export const TestimonialAuthor = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
+  position: relative;
 `;
 
 export const AreasContainer = styled.div`
