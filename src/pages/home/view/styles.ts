@@ -135,7 +135,7 @@ export const TestimonialColumn = styled.div`
 `;
 
 export const TestimonialCard = styled.article`
-  background-color: #001633;
+  background-color: ${colorPalette.primaryColor};
   border-radius: 24px;
   height: 270px;
   width: 354px;
