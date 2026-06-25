@@ -790,8 +790,8 @@ const HomeView = () => {
                     height={24}
                     style={{
                       transform: openResponse.includes(item.id)
-                        ? 'rotate(180deg)'
-                        : 'rotate(0deg)',
+                        ? 'rotate(0deg)'
+                        : 'rotate(180deg)',
                       transition: '0.2s',
                     }}
                   />
