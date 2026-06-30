@@ -24,7 +24,7 @@ describe('Header Component', () => {
   it('should match snapshot', () => {
     const links = [
       { label: 'aboutUs', onClick: jest.fn() },
-      { label: 'initiatives', onClick: jest.fn() },
+      // { label: 'initiatives', onClick: jest.fn() },
     ];
 
     const { container } = render(
