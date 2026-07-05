@@ -32,11 +32,13 @@ function Footer() {
     >
       <FooterContainer>
         <Logo>
-          <Image
-            src={logoImage}
-            alt="Sou Junior - Logo da organização que impulsiona carreiras em tecnologia"
-            role="img"
-          />
+          <a href="/" aria-label="Voltar para a página inicial">
+            <Image
+              src={logoImage}
+              alt="Sou Junior - Logo da organização que impulsiona carreiras em tecnologia"
+              role="img"
+            />
+          </a>
         </Logo>
         <NavContainer>
           <ContentWrapper>
