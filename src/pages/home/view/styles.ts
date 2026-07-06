@@ -130,10 +130,9 @@ export const Toothpick = styled.div`
 
 export const ContainerTestimonialTitle = styled.div`
   text-align: center;
-  gap: 8px;
 `;
 
-export const TestimonialTitle = styled.h1`
+export const TestimonialTitle = styled.h2`
   color: #001633;
   font-size: 48px;
   font-weight: 700;
