@@ -192,23 +192,6 @@ export const CarouselContainer = styled.div`
   max-width: 935px;
 `;
 
-export const CardsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-`;
-
-export const CustomCardWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 53px;
-  border: 1px solid #002c66;
-  border-radius: 24px;
-  background-color: #fff;
-  max-width: 600px;
-`;
-
 export const SectionTitle = styled.h2`
   color: #003986;
   font-size: 2.5rem;
