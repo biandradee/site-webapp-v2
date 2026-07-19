@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
   FooterContainer,
   Nav,
@@ -32,13 +33,13 @@ function Footer() {
     >
       <FooterContainer>
         <Logo>
-          <a href="/">
+          <RouterLink to="/">
             <Image
               src={logoImage}
               alt="Sou Junior - Logo da organização que impulsiona carreiras em tecnologia"
               role="img"
             />
-          </a>
+          </RouterLink>
         </Logo>
         <NavContainer>
           <ContentWrapper>
